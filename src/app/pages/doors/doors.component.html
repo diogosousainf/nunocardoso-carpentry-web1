@@ -1,1 +1,21 @@
-<p>doors works!</p>
+<!-- Seção de Exposição de Fotos -->
+<section class="exposicao-fotos py-5">
+  <div class="container-fluid">
+    <div class="container text-center">
+      <h2 class="section-title">Portas</h2>
+      <div class="line-under-title"></div>
+    </div>
+    <div class="row grid">
+      <ng-container *ngFor="let image of images">
+        <!-- Coluna de Imagem -->
+        <div class="col-md-4 col-sm-6 mb-4 grid-item">
+          <div class="img-container">
+            <a [href]="'/assets/images/Portas/' + image" class="glightbox" data-gallery="portas">
+              <img [src]="'/assets/images/Portas/' + image" [alt]="'Porta ' + image" class="img-fluid">
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
