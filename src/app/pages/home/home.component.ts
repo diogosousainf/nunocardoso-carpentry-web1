@@ -4,6 +4,7 @@ import {ProductsSectionComponent} from '../../components/products-section/produc
 import {CompanyQuoteComponent} from '../../components/company-quote/company-quote.component';
 import {AboutUsComponent} from '../../components/about-us/about-us.component';
 import {CompanyComponent} from '../../components/company/company.component';
+import {VideoheroComponent} from '../../components/videohero/videohero.component';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import {CompanyComponent} from '../../components/company/company.component';
     ProductsSectionComponent,
     CompanyQuoteComponent,
     AboutUsComponent,
-    CompanyComponent
+    CompanyComponent,
+    VideoheroComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
