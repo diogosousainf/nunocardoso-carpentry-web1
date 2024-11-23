@@ -1,1 +1,34 @@
-<p>company-quote works!</p>
+<!-- Seção de Trabalhos Recentes -->
+<section class="recent-works py-5">
+  <div class="container-fluid">
+    <div class="container text-center">
+      <h2 class="section-title">Trabalhos Recentes</h2>
+      <div class="line-under-title"></div>
+    </div>
+    <div class="row justify-content-center">
+      <ng-container *ngFor="let work of recentWorks">
+        <!-- Trabalho Recente -->
+        <div class="col-md-4 col-sm-6 mb-4 recent-work-item">
+          <div class="work-container">
+            <a [href]="work.coverImage" class="glightbox" data-pswp-gallery="trabalhos-recentes">
+              <img [src]="work.coverImage" [alt]="work.title" class="img-fluid cover-image">
+            </a>
+            <h3 class="work-title">{{ work.title }}</h3>
+            <div *ngFor="let image of work.gallery" class="d-none">
+              <a [href]="image" class="glightbox" data-pswp-gallery="trabalhos-recentes"></a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<!-- Iniciando GLightbox para Trabalhos Recentes -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const lightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  });
+</script>
