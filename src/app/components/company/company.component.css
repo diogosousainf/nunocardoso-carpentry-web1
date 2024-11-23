@@ -1,0 +1,67 @@
+.good-design-process {
+  padding: 60px 0;
+}
+
+.process-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #6b4f31;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.process-description {
+  font-size: 1.2rem;
+  color: #4f4f4f;
+  line-height: 1.8;
+}
+
+.image-section {
+  position: relative;
+}
+
+.image-section img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.image-text {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .process-title {
+    font-size: 2rem;
+  }
+  .process-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .process-title {
+    font-size: 1.8rem;
+  }
+  .process-description {
+    font-size: 1rem;
+  }
+  .image-overlay {
+    bottom: 10px;
+    left: 10px;
+  }
+  .image-text {
+    font-size: 1rem;
+  }
+}
