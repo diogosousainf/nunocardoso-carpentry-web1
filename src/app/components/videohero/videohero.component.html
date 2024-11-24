@@ -1,46 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fullscreen Video Component</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    .fullscreen-video {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .fullscreen-video video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-    }
-
-
-  </style>
-</head>
-<body>
-<div class="fullscreen-video">
-  <video src="/assets/images/Nuno%20Cardoso%20%20%20Carpintaria%20-%20NC%20(1080p,%20h264,%20youtube).MP4" autoplay loop muted></video>
-</div>
-</body>
-</html>
+<section class="video-hero">
+  <video id="plyr-video" class="video-js vjs-big-play-centered" autoplay muted loop preload="auto">
+    <source src="/assets/images/videoteste.mov" type="video/mp4" />
+    Seu navegador não suporta a tag de vídeo.
+  </video>
+</section>

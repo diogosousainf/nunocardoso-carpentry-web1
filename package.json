@@ -27,9 +27,11 @@
     "express": "^4.18.2",
     "gsap": "^3.12.5",
     "lightgallery": "^2.8.1",
+    "plyr": "^3.7.8",
     "rxjs": "~7.8.0",
     "swiper": "^11.1.15",
     "tslib": "^2.3.0",
+    "video.js": "^8.19.1",
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
