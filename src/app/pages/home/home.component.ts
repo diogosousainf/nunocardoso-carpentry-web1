@@ -5,6 +5,7 @@ import {CompanyQuoteComponent} from '../../components/company-quote/company-quot
 import {AboutUsComponent} from '../../components/about-us/about-us.component';
 import {CompanyComponent} from '../../components/company/company.component';
 import {VideoheroComponent} from '../../components/videohero/videohero.component';
+import {TalktousComponent} from '../../components/talktous/talktous.component';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ import {VideoheroComponent} from '../../components/videohero/videohero.component
     CompanyQuoteComponent,
     AboutUsComponent,
     CompanyComponent,
-    VideoheroComponent
+    VideoheroComponent,
+    TalktousComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

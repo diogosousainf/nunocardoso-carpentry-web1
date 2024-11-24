@@ -1,5 +1,5 @@
-/* Seção de Bom Design é um Bom Processo - Design Exclusivo com Glassmorphism */
-.good-design-process {
+/* Seção Talk to Us - Design Exclusivo com Glassmorphism Melhorado */
+.talktous-section {
   padding: 100px 0;
   position: relative;
   overflow: hidden;
@@ -10,7 +10,7 @@
   overflow: hidden;
   height: 100%;
   width: 100%;
-  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
   transform: translateZ(0);
   transition: transform 0.6s ease;
   position: relative;
@@ -39,7 +39,7 @@
   z-index: 1;
 }
 
-.text-section {
+.text-container {
   z-index: 2;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
@@ -52,12 +52,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.text-section:hover {
+.text-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
 }
 
-.process-title {
+.talktous-title {
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: bold;
@@ -66,10 +66,54 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-.process-description {
+.talktous-description {
+  font-size: 1.15rem;
+  color: #666;
+  line-height: 1.8;
+  transition: color 0.3s;
+}
+
+.talktous-description:hover {
+  color: #4f4f4f;
+}
+
+.talktous-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.talktous-list li {
   font-size: 1.15rem;
   color: #4f4f4f;
-  line-height: 1.8;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.talktous-list li::before {
+  content: '\2022';
+  color: #a55d35;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.talktous-button {
+  background-color: #a55d35;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 25px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.talktous-button:hover {
+  background-color: #8e4a2b;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Animação de Parallax ao Rolar a Página */
@@ -80,19 +124,19 @@
 }
 
 @media (max-width: 768px) {
-  .text-section {
+  .text-container {
     padding: 30px;
   }
 
-  .process-title {
+  .talktous-title {
     font-size: 2.2rem;
   }
 
-  .process-description {
+  .talktous-description {
     font-size: 1rem;
   }
 
-  .good-design-process {
+  .talktous-section {
     padding: 50px 0;
   }
 }

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body, html {
   overflow-x: hidden;
+  background: linear-gradient(135deg, #f9f7f1, #e9e4d6);
+
 }
 body {
   overflow-y: hidden;
