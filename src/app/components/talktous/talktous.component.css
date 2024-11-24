@@ -10,7 +10,7 @@
   overflow: hidden;
   height: 100%;
   width: 100%;
-  clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
+  clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 80%);
   transform: translateZ(0);
   transition: transform 0.6s ease;
   position: relative;
@@ -126,6 +126,14 @@
 @media (max-width: 768px) {
   .text-container {
     padding: 30px;
+  }
+
+  .image-container {
+    order: 2;
+  }
+
+  .text-container {
+    order: 1;
   }
 
   .talktous-title {
