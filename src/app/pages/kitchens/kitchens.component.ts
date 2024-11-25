@@ -13,8 +13,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class KitchensComponent implements OnInit {
   images: string[] = [
-    'cr7.jpg'  , 'cr8.jpg'  , 'cr9.jpg','c1.png'  , 'c2.png'  , 'c3.png'  , 'c4.png'   , 'c11.png'  , 'c12.png'  , 'c13.png'  , 'c14.png'  , 'c15.png' , 'c16.png' , 'c17.png' , 'c18.png' ,'c19.png' ,'c20.png' ,
-    'c21.png'  , 'cr1.jpg' ,'cr2.jpg' , 'cr3.jpg' , 'cr4.jpg' , 'cr5.jpg'
+    'c8.png'  , 'c9.png'  , 'c12.png'  , 'c11.png'     , 'c12.png'  , 'c13.png'  , 'c14.png'  , 'c15.png' , 'c16.png' , 'c17.png' , 'c18.png' ,'c19.png' ,'c20.png' ,
+    'c21.png'  , 'c22.jpg' ,'c23.jpg' , 'c24.jpg' , 'c25.jpg' , 'c26.jpg','c27.jpg'  , 'c28.jpg'  , 'c30.jpg'
   ];
 
   constructor(private sanitizer: DomSanitizer) {}

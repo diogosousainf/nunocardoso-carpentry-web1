@@ -14,10 +14,10 @@ export class CompanyQuoteComponent implements OnInit {
   recentWorks = [
     {
       title: 'Trabalho 1',
-      coverImage: '/assets/images/Cozinhas/c1.png',
+      coverImage: '/assets/images/Cozinhas/c8.png',
       gallery: [
-        '/assets/images/Cozinhas/c2.png',
-        '/assets/images/Cozinhas/c3.png'
+        '/assets/images/Cozinhas/c9.png',
+        '/assets/images/Cozinhas/c12.png'
       ]
     },
     {

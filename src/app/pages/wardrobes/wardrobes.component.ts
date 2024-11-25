@@ -13,9 +13,9 @@ import {NgForOf} from '@angular/common';
 })
 export class WardrobesComponent implements OnInit {
   images: string[] = [
-    'A1.webp', 'A2.webp', 'A3.webp', 'A4.webp', 'A5.webp', 'a6.webp', 'a7.webp', 'a8.webp',
+    'a1.webp', 'a2.webp', 'a3.webp', 'a4.webp', 'a5.webp', 'a6.webp', 'a7.webp', 'a8.webp',
     'a9.webp', 'a10.webp', 'a11.webp', 'a12.webp', 'a13.webp', 'a14.webp', 'a15.webp', 'a16.webp',
-    'a18.webp', 'a19.webp', 'a21.webp', 'a22.webp', 'ar1.jpg', 'ar2.jpg', 'ar3.jpg', 'ar4.jpg'
+    'a18.webp', 'a19.webp', 'a21.webp', 'a22.webp', 'a23.jpg', 'a24.jpg', 'a25.jpg', 'a26.jpg'
   ];
 
   constructor(private sanitizer: DomSanitizer) {}
