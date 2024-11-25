@@ -1,1 +1,26 @@
-<p>general-carpentry works!</p>
+<!-- Seção de Banner -->
+<section class="banner-section position-relative">
+  <div class="banner-overlay"></div>
+  <img src="/assets/images/Carpintaria-geral/2.webp" alt="Banner Portas" class="banner-img img-fluid">
+  <div class="banner-content text-center">
+    <h1 class="banner-title">Carpintaria geral</h1>
+  </div>
+</section>
+
+<!-- Seção de Exposição de Fotos -->
+<section class="exposicao-fotos py-5">
+  <div class="container-fluid">
+    <div class="row grid">
+      <ng-container *ngFor="let image of images">
+        <!-- Coluna de Imagem -->
+        <div class="col-md-4 col-sm-6 mb-4 grid-item">
+          <div class="img-container">
+            <a [href]="'/assets/images/Carpintaria-geral/' + image" class="glightbox" data-gallery="general-carpentry">
+              <img [src]="getSanitizedUrl('/assets/images/Carpintaria-geral/' + image)" [alt]="'Carpintaria Geral ' + image" class="img-fluid">
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

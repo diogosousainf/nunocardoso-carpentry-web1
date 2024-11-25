@@ -24,7 +24,6 @@
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-  // Inicializa o Masonry após o carregamento das imagens
   document.addEventListener('DOMContentLoaded', function () {
     var grid = document.querySelector('.grid');
 
@@ -39,20 +38,33 @@
     });
 
     // Inicializa o GLightbox para as galerias
-    const lightbox = GLightbox({
-      selector: '.glightbox'
-    });
+    initializeLightbox();
   });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
+
+  function initializeLightbox() {
+    GLightbox({
+      selector: '.glightbox',
+      openEffect: 'zoom',
+      closeEffect: 'fade',
+      loop: true
+    });
+  }
+
+  document.addEventListener('AngularComponentLoaded', function () {
+    // Reinicializa o GLightbox quando o componente é carregado novamente
+    initializeLightbox();
+  });
+
+  // Inicializa o AOS para animações
+  document.addEventListener('DOMContentLoaded', function () {
     AOS.init({
       duration: 1000,
       easing: 'ease-in-out',
       once: true,
-      offset: 50 // diminua o valor para que os elementos não se movam tanto durante a animação
+      offset: 50
     });
   });
 </script>
+
 </body>
 </html>

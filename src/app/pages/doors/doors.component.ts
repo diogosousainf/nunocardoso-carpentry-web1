@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {NgClass, NgForOf} from '@angular/common';
+import { NgClass, NgForOf } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
+import GLightbox from 'glightbox';
 
 @Component({
   selector: 'app-doors',
@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './doors.component.html',
   styleUrls: ['./doors.component.css']
 })
-export class DoorsComponent implements OnInit {
+export class DoorsComponent  implements OnInit {
   images: string[] = [
     'p1.webp', 'p2.webp', 'p3.webp', 'p11.webp', 'p12.webp', 'p15.webp', 'p16.webp', 'p19.webp',
     'p21.webp',  'p25.webp', 'p26.webp', 'p27.webp','p29.webp', 'p30.webp', 'p31.webp', 'p32.webp',
@@ -23,7 +23,14 @@ export class DoorsComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    // Código para inicialização se necessário
+    if (typeof window !== 'undefined') {
+      // Somente executa no lado do cliente
+      import('glightbox').then(GLightbox => {
+        GLightbox.default({
+          selector: '.glightbox'
+        });
+      });
+    }
   }
 
   getSanitizedUrl(url: string) {

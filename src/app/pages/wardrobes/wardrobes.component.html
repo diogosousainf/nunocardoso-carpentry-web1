@@ -1,1 +1,26 @@
-<p>wardrobes works!</p>
+<!-- Seção de Banner -->
+<section class="banner-section position-relative">
+  <div class="banner-overlay"></div>
+  <img src="/assets/images/Cozinhas/c14.png" alt="Banner Portas" class="banner-img img-fluid">
+  <div class="banner-content text-center">
+    <h1 class="banner-title">Armários</h1>
+  </div>
+</section>
+
+<!-- Seção de Exposição de Fotos -->
+<section class="exposicao-fotos py-5">
+  <div class="container-fluid">
+    <div class="row grid">
+      <ng-container *ngFor="let image of images">
+        <!-- Coluna de Imagem -->
+        <div class="col-md-4 col-sm-6 mb-4 grid-item">
+          <div class="img-container">
+            <a [href]="'/assets/images/Armários/' + image" class="glightbox" data-gallery="armarios">
+              <img [src]="'/assets/images/Armários/' + image" [alt]="'Armario ' + image" class="img-fluid">
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
