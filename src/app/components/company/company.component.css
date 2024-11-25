@@ -71,6 +71,13 @@
   color: #4f4f4f;
   line-height: 1.8;
 }
+.divider {
+  width: 70px;
+  height: 4px;
+  background-color: #a55d35;
+  margin: 20px 0;
+}
+
 
 /* Animação de Parallax ao Rolar a Página */
 @media (hover: none) {

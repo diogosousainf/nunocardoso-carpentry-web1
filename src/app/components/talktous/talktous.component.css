@@ -115,6 +115,13 @@
   background-color: #8e4a2b;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
+.divider {
+  width: 70px;
+  height: 4px;
+  background-color: #a55d35;
+  margin: 20px 0;
+}
+
 
 /* Animação de Parallax ao Rolar a Página */
 @media (hover: none) {
