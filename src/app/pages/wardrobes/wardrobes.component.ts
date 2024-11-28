@@ -22,6 +22,7 @@ export class WardrobesComponent implements OnInit {
 
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       // Somente executa no lado do cliente
       import('glightbox').then(GLightbox => {
         GLightbox.default({
