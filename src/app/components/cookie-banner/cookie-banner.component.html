@@ -1,0 +1,16 @@
+<div *ngIf="showBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      {{ 'COOKIES.MESSAGE' | translate }}
+      <a href="/privacy-policy" class="cookie-link">{{ 'COOKIES.PRIVACY_POLICY' | translate }}</a>
+    </p>
+    <div class="cookie-buttons">
+      <button class="btn btn-outline" (click)="rejectCookies()">
+        {{ 'COOKIES.REJECT' | translate }}
+      </button>
+      <button class="btn btn-dark" (click)="acceptCookies()">
+        {{ 'COOKIES.ACCEPT' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

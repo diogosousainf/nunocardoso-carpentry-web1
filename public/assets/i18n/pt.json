@@ -58,5 +58,87 @@
   },
   "GENERAL_CARPENTRY": {
     "TITLE": "Carpintaria Geral"
+  },
+  "COOKIES": {
+    "MESSAGE": "Este site utiliza cookies para melhorar a sua experiência. Ao continuar a navegar, você concorda com o uso de cookies.",
+    "ACCEPT": "Aceitar",
+    "REJECT": "Rejeitar",
+    "PRIVACY_POLICY": "Política de Privacidade"
+  },
+  "PRIVACY": {
+    "TITLE": "Política de Privacidade",
+    "LAST_UPDATED": "Última atualização: Fevereiro 2024",
+    "INTRO": {
+      "TITLE": "Introdução",
+      "CONTENT": "A Nuno Cardoso - Carpintaria ('nós' ou 'nosso') está comprometida em proteger a sua privacidade. Esta Política de Privacidade explica como recolhemos, utilizamos e protegemos os seus dados pessoais quando utiliza o nosso website."
+    },
+    "CONTROLLER": {
+      "TITLE": "Responsável pelo Tratamento de Dados",
+      "CONTENT": "O responsável pelo tratamento dos seus dados pessoais é:",
+      "COMPANY_NAME": "Nuno Cardoso - Carpintaria",
+      "ADDRESS": "Rua da Aldeia Nova, Armazém 141J, Portugal",
+      "EMAIL": "nunocardoso.carpintaria@gmail.com",
+      "PHONE": "+351 123 456 789"
+    },
+    "DATA_COLLECTION": {
+      "TITLE": "Informações que Recolhemos",
+      "DESCRIPTION": "Recolhemos e processamos os seguintes tipos de informação:",
+      "TYPES": {
+        "TECHNICAL": "Dados técnicos (endereço IP, tipo de navegador, informações do dispositivo)",
+        "USAGE": "Dados de utilização (como utiliza o nosso website)",
+        "COMMUNICATION": "Dados de comunicação (quando nos contacta)"
+      }
+    },
+    "LEGAL_BASIS": {
+      "TITLE": "Base Legal para o Tratamento",
+      "CONSENT": "O seu consentimento para cookies não essenciais e análises",
+      "CONTRACT": "Execução de um contrato quando solicita os nossos serviços",
+      "LEGAL_OBLIGATION": "Cumprimento de obrigações legais",
+      "LEGITIMATE_INTERESTS": "Os nossos interesses legítimos em melhorar os nossos serviços"
+    },
+    "COOKIES": {
+      "TITLE": "Cookies e Tecnologias Similares",
+      "DESCRIPTION": "Utilizamos cookies para melhorar a sua experiência de navegação:",
+      "TYPES": {
+        "TITLE": "Tipos de Cookies que Utilizamos",
+        "ESSENTIAL": {
+          "TITLE": "Cookies Essenciais",
+          "DESCRIPTION": "Necessários para o funcionamento básico do website. O site não pode funcionar corretamente sem estes cookies.",
+          "DURATION": "Duração: Sessão"
+        },
+        "ANALYTICS": {
+          "TITLE": "Cookies Analíticos",
+          "DESCRIPTION": "Ajudam-nos a compreender como os visitantes interagem com o website",
+          "DURATION": "Duração: Até 2 anos"
+        }
+      }
+    },
+    "DATA_RETENTION": {
+      "TITLE": "Retenção de Dados",
+      "DESCRIPTION": "Conservamos os seus dados pessoais apenas pelo tempo necessário para cumprir as finalidades para as quais foram recolhidos, incluindo requisitos legais, contabilísticos ou de relatório."
+    },
+    "DATA_TRANSFERS": {
+      "TITLE": "Transferências Internacionais de Dados",
+      "DESCRIPTION": "Os seus dados são armazenados e processados dentro do Espaço Económico Europeu (EEE). Qualquer transferência para fora do EEE será protegida por garantias adequadas."
+    },
+    "RIGHTS": {
+      "TITLE": "Os Seus Direitos",
+      "ACCESS": "Direito de acesso aos seus dados pessoais",
+      "RECTIFICATION": "Direito de retificação dos seus dados",
+      "DELETION": "Direito ao apagamento dos seus dados",
+      "RESTRICTION": "Direito à limitação do tratamento",
+      "PORTABILITY": "Direito à portabilidade dos dados",
+      "OBJECT": "Direito de oposição ao tratamento",
+      "WITHDRAW_CONSENT": "Direito de retirar o consentimento a qualquer momento"
+    },
+    "COMPLAINTS": {
+      "TITLE": "Reclamações",
+      "CONTENT": "Se tiver preocupações sobre como tratamos os seus dados, por favor contacte-nos primeiro. Tem também o direito de apresentar uma reclamação a uma autoridade de controlo.",
+      "AUTHORITY": "Em Portugal, pode contactar a Comissão Nacional de Proteção de Dados (CNPD)."
+    },
+    "CONTACT": {
+      "TITLE": "Contacte-nos",
+      "CONTENT": "Para questões relacionadas com a privacidade ou para exercer os seus direitos, contacte-nos através do email nunocardoso.carpintaria@gmail.com"
+    }
   }
 }
