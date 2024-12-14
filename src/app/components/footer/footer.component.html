@@ -6,30 +6,30 @@
       <div class="col-md-3 mb-4">
         <img src="/assets/images/logonc.webp" alt="Nuno Cardoso Carpintaria" class="footer-logo mb-3">
         <p class="footer-description">
-          Oferecemos soluções de carpintaria de alta qualidade, combinando criatividade e precisão para garantir a satisfação de nossos clientes em cada projeto.
+          {{ 'FOOTER.DESCRIPTION' | translate }}
         </p>
       </div>
 
       <!-- Links Rápidos -->
       <div class="col-md-3 mb-4 text-center">
-        <h5 class="footer-title">Links Rápidos</h5>
+        <h5 class="footer-title">{{ 'FOOTER.QUICK_LINKS' | translate }}</h5>
         <ul class="list-unstyled footer-links">
-          <li><a  href="#">Início</a></li>
-          <li><a href="#empresa">Empresa</a></li>
+          <li><a href="#">{{ 'FOOTER.HOME' | translate }}</a></li>
+          <li><a href="#empresa">{{ 'FOOTER.COMPANY' | translate }}</a></li>
         </ul>
       </div>
 
       <!-- Contactos -->
       <div class="col-md-4 mb-4">
-        <h5 class="footer-title ">Contactos</h5>
+        <h5 class="footer-title">{{ 'FOOTER.CONTACTS' | translate }}</h5>
         <ul class="list-unstyled footer-contact">
-          <li><i class="fas fa-map-marker-alt"></i>  Rua da Aldeia Nova, Armazem 141J</li>
+          <li><i class="fas fa-map-marker-alt"></i> {{ 'FOOTER.ADDRESS' | translate }}</li>
           <div class="contact-line d-flex justify-content-between">
-            <li><i class="fas fa-phone-alt"></i>  252 029 561</li>
+            <li><i class="fas fa-phone-alt"></i> 252 029 561</li>
             <li><i class="fas fa-mobile-alt" aria-hidden="true"></i> 919 161 046</li>
             <li><i class="fas fa-mobile-alt" aria-hidden="true"></i> 967 264 535</li>
           </div>
-          <li><i class="fas fa-envelope"></i> <a href="mailto:info@nunocardosocarpintaria.com">  nunocardoso.carpintaria&#64;gmail.com</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:info@nunocardosocarpintaria.com"> nunocardoso.carpintaria&#64;gmail.com</a></li>
         </ul>
       </div>
 
@@ -54,7 +54,7 @@
       <!-- Copyright -->
       <div class="col text-center">
         <p class="footer-copyright">
-          &copy; 2024 Nuno Cardoso Carpintaria. Todos os direitos reservados.
+          {{ 'FOOTER.COPYRIGHT' | translate }}
         </p>
       </div>
     </div>

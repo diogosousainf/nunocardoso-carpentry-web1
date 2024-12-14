@@ -87,3 +87,29 @@
 .container {
   max-width: 1200px;
 }
+
+.flag-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+.language-selector {
+  padding: 0.5rem 1rem !important;
+}
+
+.language-selector img {
+  margin-right: 0;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}

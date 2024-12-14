@@ -1,0 +1,62 @@
+{
+  "NAV": {
+    "HOME": "INÍCIO",
+    "PRODUCTS": "PRODUTOS",
+    "COMPANY": "EMPRESA",
+    "CONTACTS": "CONTACTOS",
+    "PRODUCTS_SUBMENU": {
+      "KITCHENS": "Cozinhas",
+      "WARDROBES": "Armários",
+      "DOORS": "Portas",
+      "GENERAL_CARPENTRY": "Carpintaria Geral"
+    }
+  },
+  "ABOUT": {
+    "TITLE": "A EMPRESA",
+    "DESCRIPTION": "Somos uma empresa portuguesa fundada em 2002 e nos orgulhamos em combinar evolução com tradição. Cada dia nos esforçamos para construir relações fortes e confiáveis com nossos clientes e fornecedores.\n\n A nossa qualidade estende-se a todos os materiais e processos de fabricação que usamos. Os nossos produtos são totalmente personalizáveis e projetamos com base nas necessidades dos nossos clientes."
+  },
+  "GOOD_DESIGN": {
+    "TITLE": "UM BOM DESIGN É UM BOM PROCESSO",
+    "DESCRIPTION": "Cada projeto é alvo de cuidadosa atenção. A qualidade e durabilidade dos materiais utilizados em cada peça combina com a fiabilidade dos processos industriais e a dedicação do trabalho artesanal. Todos os envolvidos na produção dos nossos artigos possuem uma longa experiência e as suas mãos hábeis garantem a atenção a cada detalhe, mesmo o menos visível."
+  },
+  "PRODUCTS": {
+    "TITLE": "Encontre a solução ideal para o seu espaço, com qualidade e elegância",
+    "DOORS": "Portas",
+    "KITCHENS": "Cozinhas",
+    "WARDROBES": "Armários",
+    "GENERAL_CARPENTRY": "Carpintaria Geral"
+  },
+  "TALK_TO_US": {
+    "TITLE": "Orçamento Personalizado para Projetos Exclusivos em Madeira",
+    "DESCRIPTION": "Somos especialistas em carpintaria personalizada. Fale conosco e obtenha um orçamento sem compromisso para o seu projeto dos sonhos.",
+    "LIST": {
+      "ITEM1": "Design de Interiores Personalizado",
+      "ITEM2": "Mobilário Feito Sob Medida",
+      "ITEM3": "Mais de 20 Anos de Experiência",
+      "ITEM4": "Ofício Artesanal com Excelência",
+      "ITEM5": "Qualidade Garantida"
+    },
+    "BUTTON": "Fale Connosco"
+  },
+  "FOOTER": {
+    "DESCRIPTION": "Oferecemos soluções de carpintaria de alta qualidade, combinando criatividade e precisão para garantir a satisfação de nossos clientes em cada projeto.",
+    "QUICK_LINKS": "Links Rápidos",
+    "HOME": "Início",
+    "COMPANY": "Empresa",
+    "CONTACTS": "Contactos",
+    "ADDRESS": "Rua da Aldeia Nova, Armazem 141J",
+    "COPYRIGHT": "© 2024 Nuno Cardoso Carpintaria. Todos os direitos reservados."
+  },
+  "KITCHENS": {
+    "TITLE": "Cozinhas"
+  },
+  "WARDROBES": {
+    "TITLE": "Armários"
+  },
+  "DOORS": {
+    "TITLE": "Portas"
+  },
+  "GENERAL_CARPENTRY": {
+    "TITLE": "Carpintaria Geral"
+  }
+}

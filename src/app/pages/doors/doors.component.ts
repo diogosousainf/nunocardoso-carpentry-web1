@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgClass, NgForOf , NgIf } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import GLightbox from 'glightbox';
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-doors',
@@ -9,7 +10,8 @@ import GLightbox from 'glightbox';
   imports: [
     NgForOf,
     NgClass,
-    NgIf
+    NgIf,
+    TranslateModule
   ],
   templateUrl: './doors.component.html',
   styleUrls: ['./doors.component.css']

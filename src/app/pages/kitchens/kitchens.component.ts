@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForOf, NgClass, NgIf} from "@angular/common";
+import {TranslateModule} from '@ngx-translate/core';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
@@ -8,7 +9,8 @@ import {DomSanitizer} from '@angular/platform-browser';
     imports: [
         NgForOf,
         NgClass,
-        NgIf
+        NgIf,
+        TranslateModule
     ],
   templateUrl: './kitchens.component.html',
   styleUrl: './kitchens.component.css'

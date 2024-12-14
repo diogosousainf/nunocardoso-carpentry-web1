@@ -1,0 +1,62 @@
+{
+  "NAV": {
+    "HOME": "HOME",
+    "PRODUCTS": "PRODUCTS",
+    "COMPANY": "COMPANY",
+    "CONTACTS": "CONTACTS",
+    "PRODUCTS_SUBMENU": {
+      "KITCHENS": "Kitchens",
+      "WARDROBES": "Wardrobes",
+      "DOORS": "Doors",
+      "GENERAL_CARPENTRY": "General Carpentry"
+    }
+  },
+  "ABOUT": {
+    "TITLE": "THE COMPANY",
+    "DESCRIPTION": "We are a Portuguese company founded in 2002 and we take pride in combining evolution with tradition. We strive every day to build strong and trustworthy relationships with our customers and suppliers.\n\nOur quality extends to all materials and manufacturing processes we use. Our products are fully customizable and we design based on our customers' needs."
+  },
+  "GOOD_DESIGN": {
+    "TITLE": "GOOD DESIGN IS A GOOD PROCESS",
+    "DESCRIPTION": "Each project receives careful attention. The quality and durability of materials used in each piece combines with the reliability of industrial processes and the dedication of handcrafted work. Everyone involved in the production of our items has extensive experience, and their skilled hands ensure attention to every detail, even the least visible ones."
+  },
+  "PRODUCTS": {
+    "TITLE": "Find the ideal solution for your space, with quality and elegance",
+    "DOORS": "Doors",
+    "KITCHENS": "Kitchens",
+    "WARDROBES": "Wardrobes",
+    "GENERAL_CARPENTRY": "General Carpentry"
+  },
+  "TALK_TO_US": {
+    "TITLE": "Custom Quote for Exclusive Wood Projects",
+    "DESCRIPTION": "We are specialists in custom woodworking. Contact us and get a no-obligation quote for your dream project.",
+    "LIST": {
+      "ITEM1": "Custom Interior Design",
+      "ITEM2": "Custom-Made Furniture",
+      "ITEM3": "Over 20 Years of Experience",
+      "ITEM4": "Excellence in Craftsmanship",
+      "ITEM5": "Guaranteed Quality"
+    },
+    "BUTTON": "Contact Us"
+  },
+  "FOOTER": {
+    "DESCRIPTION": "We offer high-quality carpentry solutions, combining creativity and precision to ensure customer satisfaction in every project.",
+    "QUICK_LINKS": "Quick Links",
+    "HOME": "Home",
+    "COMPANY": "Company",
+    "CONTACTS": "Contacts",
+    "ADDRESS": "Rua da Aldeia Nova, Warehouse 141J",
+    "COPYRIGHT": "© 2024 Nuno Cardoso Carpintaria. All rights reserved."
+  },
+  "KITCHENS": {
+    "TITLE": "Kitchens"
+  },
+  "WARDROBES": {
+    "TITLE": "Wardrobes"
+  },
+  "DOORS": {
+    "TITLE": "Doors"
+  },
+  "GENERAL_CARPENTRY": {
+    "TITLE": "General Carpentry"
+  }
+}

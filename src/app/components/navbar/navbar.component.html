@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link"  href="#" >INÍCIO</a>
+          <a class="nav-link" href="#">{{ 'NAV.HOME' | translate }}</a>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -28,22 +28,51 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            PRODUTOS
+            {{ 'NAV.PRODUCTS' | translate }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-            <li><a class="dropdown-item" routerLink="/kitchens">Cozinhas</a></li>
-            <li><a class="dropdown-item" routerLink="/wardrobes">Armários</a></li>
-            <li><a class="dropdown-item" routerLink="/doors">Portas</a></li>
-            <li><a class="dropdown-item" routerLink="/general-carpentry">Carpintaria Geral</a></li>
+            <li><a class="dropdown-item" routerLink="/kitchens">{{ 'NAV.PRODUCTS_SUBMENU.KITCHENS' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/wardrobes">{{ 'NAV.PRODUCTS_SUBMENU.WARDROBES' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/doors">{{ 'NAV.PRODUCTS_SUBMENU.DOORS' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/general-carpentry">{{ 'NAV.PRODUCTS_SUBMENU.GENERAL_CARPENTRY' | translate }}</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#empresa">EMPRESA</a>
+          <a class="nav-link" href="#empresa">{{ 'NAV.COMPANY' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#footer">CONTACTOS</a>
+          <a class="nav-link" href="#footer">{{ 'NAV.CONTACTS' | translate }}</a>
         </li>
-
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle language-selector"
+            href="#"
+            id="languageDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img 
+              [src]="'assets/images/flags/' + (currentLanguage === 'pt' ? 'pt.png' : 'uk.png')" 
+              [alt]="currentLanguage === 'pt' ? 'Português' : 'English'"
+              class="flag-icon"
+            >
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+            <li>
+              <a class="dropdown-item" (click)="changeLanguage('pt')">
+                <img src="assets/images/flags/pt.png" alt="Português" class="flag-icon">
+                Português
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="changeLanguage('en')">
+                <img src="assets/images/flags/uk.png" alt="English" class="flag-icon">
+                English
+              </a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
