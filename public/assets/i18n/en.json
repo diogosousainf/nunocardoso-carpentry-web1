@@ -140,5 +140,9 @@
       "TITLE": "Contact Us",
       "CONTENT": "For any privacy-related questions or to exercise your rights, please contact us at nunocardoso.carpintaria@gmail.com"
     }
+  },
+  "HERO": {
+    "RECENT_WORKS": "Recent Works",
+    "EXPLORE": "→"
   }
 }

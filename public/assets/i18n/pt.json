@@ -140,5 +140,9 @@
       "TITLE": "Contacte-nos",
       "CONTENT": "Para questões relacionadas com a privacidade ou para exercer os seus direitos, contacte-nos através do email nunocardoso.carpintaria@gmail.com"
     }
+  },
+  "HERO": {
+    "RECENT_WORKS": "Últimos Trabalhos",
+    "EXPLORE": "→"
   }
 }
