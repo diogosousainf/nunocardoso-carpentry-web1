@@ -15,9 +15,9 @@ import GLightbox from 'glightbox';
 })
 export class DoorsComponent  implements OnInit {
   images: string[] = [
-    'pr1.jpg', 'pr2.jpg', 'pr3.jpg','p1.webp', 'p2.webp', 'p3.webp', 'p11.webp', 'p12.webp', 'p15.webp', 'p16.webp', 'p19.webp',
-    'p21.webp',  'p25.webp', 'p26.webp', 'p27.webp','p29.webp', 'p30.webp', 'p31.webp', 'p32.webp',
-    'porta-menu.JPEG'
+    'IMG_1131.JPG', 'IMG_1133.JPG', 'pr2.jpg', 'pr3.jpg', 'p2.webp', 'p3.webp', 'p11.webp', 'p15.webp',  'p19.webp',
+    'p21.webp', 'p27.webp','p29.webp', 'p30.webp', 'p31.webp', 'p32.webp', 
+    'porta-menu.JPEG' 
   ];
 
   constructor(private sanitizer: DomSanitizer) {}
