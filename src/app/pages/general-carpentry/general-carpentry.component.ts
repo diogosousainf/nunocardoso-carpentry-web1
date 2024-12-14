@@ -1,12 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgClass, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-general-carpentry',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    NgClass,
+    NgIf
   ],
   templateUrl: './general-carpentry.component.html',
   styleUrl: './general-carpentry.component.css'
@@ -20,13 +22,40 @@ export class GeneralCarpentryComponent implements OnInit {
     '25.webp', '27.webp', '28.webp', '30.webp', '31.webp'
   ];
 
-  constructor(private sanitizer: DomSanitizer) {}
+  isLoading = true;
+  loadedImages = 0;
+  totalImages: number;
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.totalImages = this.images.length + 1; // +1 para a imagem do banner
+  }
 
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.preloadImages();
+    }
+  }
 
-      // Somente executa no lado do cliente
+  preloadImages(): void {
+    // Pré-carregar a imagem do banner
+    const bannerImg = new Image();
+    bannerImg.src = '/assets/images/Carpintaria-geral/5.webp';
+    bannerImg.onload = () => this.imageLoaded();
+
+    // Pré-carregar as outras imagens
+    this.images.forEach(imageName => {
+      const img = new Image();
+      img.src = `/assets/images/Carpintaria-geral/${imageName}`;
+      img.onload = () => this.imageLoaded();
+    });
+  }
+
+  imageLoaded(): void {
+    this.loadedImages++;
+    if (this.loadedImages === this.totalImages) {
+      this.isLoading = false;
+      // Inicializar GLightbox após todas as imagens carregarem
       import('glightbox').then(GLightbox => {
         GLightbox.default({
           selector: '.glightbox'

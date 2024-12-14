@@ -1,26 +1,35 @@
-<!-- Seção de Banner -->
-<section class="banner-section position-relative">
-  <div class="banner-overlay"></div>
-  <img src="/assets/images/Cozinhas/c14.png" alt="Banner Portas" class="banner-img img-fluid">
-  <div class="banner-content text-center">
-    <h1 class="banner-title">Cozinhas</h1>
-  </div>
-</section>
+<!-- Loading Spinner -->
+<div class="loading-spinner" *ngIf="isLoading">
+  <img src="/assets/images/logonc.webp" alt="Logo" class="loading-logo">
+  <div class="spinner"></div>
+  <p> {{loadedImages}}/{{totalImages}}</p>
+</div>
 
-<!-- Seção de Exposição de Fotos -->
-<section class="exposicao-fotos py-5">
-  <div class="container-fluid">
-    <div class="row grid">
-      <ng-container *ngFor="let image of images">
-        <!-- Coluna de Imagem -->
-        <div class="col-md-4 col-sm-6 mb-4 grid-item">
-          <div class="img-container">
-            <a [href]="'/assets/images/Cozinhas/' + image" class="glightbox" data-gallery="cozinhas">
-              <img [src]="'/assets/images/Cozinhas/' + image" [alt]="'Cozinha ' + image" class="img-fluid">
-            </a>
-          </div>
-        </div>
-      </ng-container>
+<!-- Conteúdo principal (só será mostrado quando isLoading for false) -->
+<div [ngClass]="{'content-hidden': isLoading}">
+  <!-- Seção de Banner -->
+  <section class="banner-section position-relative">
+    <div class="banner-overlay"></div>
+    <img src="/assets/images/Cozinhas/c14.png" alt="Banner Cozinhas" class="banner-img img-fluid">
+    <div class="banner-content text-center">
+      <h1 class="banner-title">Cozinhas</h1>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Seção de Exposição de Fotos -->
+  <section class="exposicao-fotos py-5">
+    <div class="container-fluid">
+      <div class="row grid">
+        <ng-container *ngFor="let image of images">
+          <div class="col-md-4 col-sm-6 mb-4 grid-item">
+            <div class="img-container">
+              <a [href]="'/assets/images/Cozinhas/' + image" class="glightbox" data-gallery="cozinhas">
+                <img [src]="'/assets/images/Cozinhas/' + image" [alt]="'Cozinha ' + image" class="img-fluid">
+              </a>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+</div>

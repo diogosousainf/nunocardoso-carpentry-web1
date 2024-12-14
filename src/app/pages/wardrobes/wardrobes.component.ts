@@ -1,12 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgClass, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-wardrobes',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    NgClass,
+    NgIf
   ],
   templateUrl: './wardrobes.component.html',
   styleUrl: './wardrobes.component.css'
@@ -22,12 +24,40 @@ export class WardrobesComponent implements OnInit {
     'a18.webp', 'a19.webp', 'a21.webp', 'a22.webp', 'a23.jpg', 'a24.jpg', 'a25.jpg', 'a26.jpg'
   ];
 
-  constructor(private sanitizer: DomSanitizer) {}
+  isLoading = true;
+  loadedImages = 0;
+  totalImages: number;
+
+  constructor(private sanitizer: DomSanitizer) {
+    this.totalImages = this.images.length + 1; // +1 para a imagem do banner
+  }
 
   ngOnInit(): void {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      // Somente executa no lado do cliente
+      this.preloadImages();
+    }
+  }
+
+  preloadImages(): void {
+    // Pré-carregar a imagem do banner
+    const bannerImg = new Image();
+    bannerImg.src = '/assets/images/Armários/a3.webp';
+    bannerImg.onload = () => this.imageLoaded();
+
+    // Pré-carregar as outras imagens
+    this.images.forEach(imageName => {
+      const img = new Image();
+      img.src = `/assets/images/Armários/${imageName}`;
+      img.onload = () => this.imageLoaded();
+    });
+  }
+
+  imageLoaded(): void {
+    this.loadedImages++;
+    if (this.loadedImages === this.totalImages) {
+      this.isLoading = false;
+      // Inicializar GLightbox após todas as imagens carregarem
       import('glightbox').then(GLightbox => {
         GLightbox.default({
           selector: '.glightbox'
