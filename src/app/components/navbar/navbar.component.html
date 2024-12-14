@@ -31,10 +31,10 @@
             {{ 'NAV.PRODUCTS' | translate }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-            <li><a class="dropdown-item" routerLink="/kitchens">{{ 'NAV.PRODUCTS_SUBMENU.KITCHENS' | translate }}</a></li>
-            <li><a class="dropdown-item" routerLink="/wardrobes">{{ 'NAV.PRODUCTS_SUBMENU.WARDROBES' | translate }}</a></li>
-            <li><a class="dropdown-item" routerLink="/doors">{{ 'NAV.PRODUCTS_SUBMENU.DOORS' | translate }}</a></li>
-            <li><a class="dropdown-item" routerLink="/general-carpentry">{{ 'NAV.PRODUCTS_SUBMENU.GENERAL_CARPENTRY' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/kitchens" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.KITCHENS' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/wardrobes" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.WARDROBES' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/doors" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.DOORS' | translate }}</a></li>
+            <li><a class="dropdown-item" routerLink="/general-carpentry" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.GENERAL_CARPENTRY' | translate }}</a></li>
           </ul>
         </li>
         <li class="nav-item">

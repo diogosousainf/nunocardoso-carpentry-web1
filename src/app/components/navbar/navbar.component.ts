@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-navbar',
@@ -36,5 +37,11 @@ export class NavbarComponent implements OnInit {
     this.currentLanguage = lang;
     this.translate.use(lang);
     localStorage.setItem('selectedLanguage', lang);
+  }
+
+  closeMenu() {
+    const navbarCollapse = document.getElementById('navbarNav');
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+    bsCollapse.hide();
   }
 }

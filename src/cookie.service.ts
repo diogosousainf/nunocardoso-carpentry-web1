@@ -44,21 +44,12 @@ export class CookieService {
 
   private enableCookies(): void {
     // Aqui você pode adicionar código para habilitar cookies de terceiros
+    
     // Por exemplo: Google Analytics, etc.
   }
 
   private disableCookies(): void {
     // Aqui você pode adicionar código para desabilitar cookies de terceiros
     // Por exemplo: Google Analytics, etc.
-  }
-
-  public debugCookieStatus(): void {
-    if (typeof window !== 'undefined') {
-      console.group('Cookie Status Debug');
-      console.log('Cookie Consent:', localStorage.getItem('cookieConsent'));
-      console.log('Has Made Choice:', this.hasUserMadeChoice());
-      console.log('Current Consent Value:', this.cookieConsent.getValue());
-      console.groupEnd();
-    }
   }
 }

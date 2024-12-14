@@ -20,8 +20,6 @@ export class CookieBannerComponent implements OnInit {
 
   ngOnInit() {
     this.showBanner = !this.cookieService.hasUserMadeChoice();
-    console.log('Banner should show:', this.showBanner);
-    console.log('User made choice:', this.cookieService.hasUserMadeChoice());
   }
 
   acceptCookies() {
