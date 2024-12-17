@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgClass, NgForOf , NgIf } from '@angular/common';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser, NgClass, NgForOf, NgIf} from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import GLightbox from 'glightbox';
 import {TranslateModule} from '@ngx-translate/core';
@@ -18,54 +18,26 @@ import {TranslateModule} from '@ngx-translate/core';
 })
 export class DoorsComponent implements OnInit {
   images: string[] = [
-    'IMG_1131.JPG', 'IMG_1133.JPG', 'pr2.jpg', 'pr3.jpg', 'p2.webp', 'p3.webp', 
-    'p11.webp', 'p15.webp', 'p19.webp', 'p21.webp', 'p27.webp','p29.webp', 
+    'IMG_1131.JPG', 'IMG_1133.JPG', 'pr2.jpg', 'pr3.jpg', 'p2.webp', 'p3.webp',
+    'p11.webp', 'p15.webp', 'p19.webp', 'p21.webp', 'p27.webp','p29.webp',
     'p30.webp', 'p31.webp', 'p32.webp', 'porta-menu.JPEG'
   ];
-  
-  isLoading = true;
-  loadedImages = 0;
-  totalImages: number;
 
-  constructor(private sanitizer: DomSanitizer) {
-    this.totalImages = this.images.length + 1; // +1 para a imagem do banner
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    if (typeof window !== 'undefined') {
+    // Rola para o topo da página ao carregar (somente no navegador)
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      this.preloadImages();
-    }
-  }
 
-  preloadImages(): void {
-    // Pré-carregar a imagem do banner
-    const bannerImg = new Image();
-    bannerImg.src = '/assets/images/Portas/pr2.jpg';
-    bannerImg.onload = () => this.imageLoaded();
-
-    // Pré-carregar as outras imagens
-    this.images.forEach(imageName => {
-      const img = new Image();
-      img.src = `/assets/images/Portas/${imageName}`;
-      img.onload = () => this.imageLoaded();
-    });
-  }
-
-  imageLoaded(): void {
-    this.loadedImages++;
-    if (this.loadedImages === this.totalImages) {
-      this.isLoading = false;
-      // Inicializar GLightbox após todas as imagens carregarem
-      import('glightbox').then(GLightbox => {
-        GLightbox.default({
-          selector: '.glightbox'
+      // Inicializa o GLightbox apenas no navegador
+      setTimeout(() => {
+        import('glightbox').then(GLightbox => {
+          GLightbox.default({
+            selector: '.glightbox',
+          });
         });
-      });
+      }, 500);
     }
-  }
-
-  getSanitizedUrl(url: string) {
-    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 }
