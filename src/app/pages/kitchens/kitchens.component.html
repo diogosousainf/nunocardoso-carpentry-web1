@@ -1,11 +1,11 @@
 <!-- Loading Spinner -->
-<div class="loading-spinner" *ngIf="isLoading">
+<div class="loading-spinner" *ngIf="!images.length">
   <img src="/assets/images/logonc.webp" alt="Logo" class="loading-logo">
   <div class="spinner"></div>
 </div>
 
-<!-- Conteúdo principal (só será mostrado quando isLoading for false) -->
-<div [ngClass]="{'content-hidden': isLoading}">
+<!-- Conteúdo principal -->
+<div>
   <!-- Seção de Banner -->
   <section class="banner-section position-relative">
     <div class="banner-overlay"></div>
@@ -19,11 +19,17 @@
   <section class="exposicao-fotos py-5">
     <div class="container-fluid">
       <div class="row grid">
+        <!-- Loop nas imagens com lazy loading -->
         <ng-container *ngFor="let image of images">
           <div class="col-md-4 col-sm-6 mb-4 grid-item">
             <div class="img-container">
               <a [href]="'/assets/images/Cozinhas/' + image" class="glightbox" data-gallery="cozinhas">
-                <img [src]="'/assets/images/Cozinhas/' + image" [alt]="'Cozinha ' + image" class="img-fluid">
+                <img
+                  [src]="'/assets/images/Cozinhas/' + image"
+                  [alt]="'Cozinha ' + image"
+                  class="img-fluid"
+                  loading="lazy"
+                >
               </a>
             </div>
           </div>

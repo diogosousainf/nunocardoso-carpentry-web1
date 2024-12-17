@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {NgForOf, NgClass, NgIf} from "@angular/common";
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';import {NgForOf, NgClass, NgIf} from "@angular/common";
 import {TranslateModule} from '@ngx-translate/core';
 import {DomSanitizer} from '@angular/platform-browser';
 
@@ -22,49 +22,21 @@ export class KitchensComponent implements OnInit {
     'c21.png'  , 'c22.jpg' ,'c23.jpg' , 'c24.jpg' , 'c25.jpg' , 'c26.jpg','c27.jpg'  , 'c28.jpg'  , 'c30.jpg'
   ];
 
-  isLoading = true;
-  loadedImages = 0;
-  totalImages: number;
-
-  constructor(private sanitizer: DomSanitizer) {
-    this.totalImages = this.images.length + 1; // +1 para a imagem do banner
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    if (typeof window !== 'undefined') {
+    // Rola para o topo da página ao carregar (somente no navegador)
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      this.preloadImages();
-    }
-  }
 
-  preloadImages(): void {
-    // Pré-carregar a imagem do banner
-    const bannerImg = new Image();
-    bannerImg.src = '/assets/images/Cozinhas/c14.png';
-    bannerImg.onload = () => this.imageLoaded();
-
-    // Pré-carregar as outras imagens
-    this.images.forEach(imageName => {
-      const img = new Image();
-      img.src = `/assets/images/Cozinhas/${imageName}`;
-      img.onload = () => this.imageLoaded();
-    });
-  }
-
-  imageLoaded(): void {
-    this.loadedImages++;
-    if (this.loadedImages === this.totalImages) {
-      this.isLoading = false;
-      // Inicializar GLightbox após todas as imagens carregarem
-      import('glightbox').then(GLightbox => {
-        GLightbox.default({
-          selector: '.glightbox'
+      // Inicializa o GLightbox apenas no navegador
+      setTimeout(() => {
+        import('glightbox').then(GLightbox => {
+          GLightbox.default({
+            selector: '.glightbox',
+          });
         });
-      });
+      }, 500);
     }
-  }
-
-  getSanitizedUrl(url: string) {
-    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 }
