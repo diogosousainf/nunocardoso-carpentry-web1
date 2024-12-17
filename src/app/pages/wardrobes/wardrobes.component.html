@@ -1,11 +1,9 @@
-<!-- Loading Spinner -->
-<div class="loading-spinner" *ngIf="isLoading">
-  <img src="/assets/images/logonc.webp" alt="Logo" class="loading-logo">
+<div *ngIf="isLoading" class="loading-spinner">
+  <img src="/assets/images/logonc.webp" alt="Loading Logo" class="loading-logo">
   <div class="spinner"></div>
 </div>
-
 <!-- Conteúdo principal (só será mostrado quando isLoading for false) -->
-<div [ngClass]="{'content-hidden': isLoading}">
+<div>
   <!-- Seção de Banner -->
   <section class="banner-section position-relative">
     <div class="banner-overlay"></div>

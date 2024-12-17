@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
-import {NgForOf, NgClass, NgIf} from '@angular/common';
+import {NgForOf, NgClass, NgIf, isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-general-carpentry',
@@ -20,53 +19,42 @@ export class GeneralCarpentryComponent implements OnInit {
     'IMG_1120.JPG' , 'IMG_1122.JPG' , 'IMG_1123.JPG' , 'IMG_1124.JPG' , 'IMG_1125.JPG' , 'IMG_1126.JPG' , 'IMG_1127.JPG','IMG_1128.JPG',
     'IMG_1136.JPG','IMG_1137.JPG', 'IMG_1138.JPG','IMG_1144.JPG','IMG_1145.JPG','IMG_1178.JPG','cgb3.jpg','cgb2.jpg',
     '1.webp', '2.webp', '4.webp', '5.webp', '6.webp', '7.webp', '8.webp',
-    '9.webp', '10.webp', '11.webp', '12.webp',   '18.webp', 
-    '25.webp', '27.webp', '28.webp', '30.webp', '31.webp'
+    '9.webp', '10.webp', '11.webp', '12.webp',   '18.webp',
+    '25.webp', '27.webp', '28.webp', '30.webp', '31.webp',
   ];
+  isLoading: boolean = true; // Inicia com o loading ativo
+  loadedImages: number = 0;
 
-  isLoading = true;
-  loadedImages = 0;
-  totalImages: number;
-
-  constructor(private sanitizer: DomSanitizer) {
-    this.totalImages = this.images.length + 1; // +1 para a imagem do banner
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    if (typeof window !== 'undefined') {
+    if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      this.preloadImages();
-    }
-  }
 
-  preloadImages(): void {
-    // Pré-carregar a imagem do banner
-    const bannerImg = new Image();
-    bannerImg.src = '/assets/images/Carpintaria-geral/5.webp';
-    bannerImg.onload = () => this.imageLoaded();
-
-    // Pré-carregar as outras imagens
-    this.images.forEach(imageName => {
-      const img = new Image();
-      img.src = `/assets/images/Carpintaria-geral/${imageName}`;
-      img.onload = () => this.imageLoaded();
-    });
-  }
-
-  imageLoaded(): void {
-    this.loadedImages++;
-    if (this.loadedImages === this.totalImages) {
-      this.isLoading = false;
-      // Inicializar GLightbox após todas as imagens carregarem
-      import('glightbox').then(GLightbox => {
-        GLightbox.default({
-          selector: '.glightbox'
-        });
+      // Espera até que pelo menos as primeiras 3 imagens carreguem
+      this.images.slice(0, 3).forEach(image => {
+        const img = new Image();
+        img.src = `/assets/images/Carpintaria-geral/${image}`;
+        img.onload = () => this.onImageLoaded();
+        img.onerror = () => this.onImageLoaded();
       });
     }
   }
 
-  getSanitizedUrl(url: string) {
-    return this.sanitizer.bypassSecurityTrustUrl(url);
+  onImageLoaded(): void {
+    this.loadedImages++;
+    if (this.loadedImages >= 3) {
+      // Remove o loader após as primeiras 3 imagens carregarem ou falharem
+      this.isLoading = false;
+      this.initializeGlightbox();
+    }
+  }
+
+  initializeGlightbox() {
+    import('glightbox').then(GLightbox => {
+      GLightbox.default({
+        selector: '.glightbox',
+      });
+    });
   }
 }

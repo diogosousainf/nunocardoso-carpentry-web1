@@ -1,18 +1,16 @@
-<!-- Loading Spinner -->
-<div class="loading-spinner" *ngIf="isLoading">
-  <img src="/assets/images/logonc.webp" alt="Logo" class="loading-logo">
+<div *ngIf="isLoading" class="loading-spinner">
+  <img src="/assets/images/logonc.webp" alt="Loading Logo" class="loading-logo">
   <div class="spinner"></div>
 </div>
 
-<!-- Conteúdo principal (só será mostrado quando isLoading for false) -->
-<div [ngClass]="{'content-hidden': isLoading}">
+<div>
   <!-- Seção de Banner -->
   <section class="banner-section position-relative">
     <div class="banner-overlay"></div>
     <img src="/assets/images/Carpintaria-geral/5.webp" alt="Banner Carpintaria Geral" class="banner-img img-fluid">
     <div class="banner-content text-center">
-        <h1 class="banner-title">{{ 'PRODUCTS.GENERAL_CARPENTRY' | translate }}</h1>
-      </div>
+      <h1 class="banner-title">{{ 'PRODUCTS.GENERAL_CARPENTRY' | translate }}</h1>
+    </div>
   </section>
 
   <!-- Seção de Exposição de Fotos -->
@@ -23,8 +21,7 @@
           <div class="col-md-4 col-sm-6 mb-4 grid-item">
             <div class="img-container">
               <a [href]="'/assets/images/Carpintaria-geral/' + image" class="glightbox" data-gallery="general-carpentry">
-                <img [src]="'/assets/images/Carpintaria-geral/' + image" [alt]="'Carpintaria Geral ' + image" class="img-fluid" loading="lazy"
-                >
+                <img [src]="'/assets/images/Carpintaria-geral/' + image" [alt]="'Carpintaria Geral ' + image" class="img-fluid" loading="lazy">
               </a>
             </div>
           </div>

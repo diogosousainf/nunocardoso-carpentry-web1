@@ -1,9 +1,7 @@
-<!-- Loading Spinner -->
-<div class="loading-spinner" *ngIf="!images.length">
-  <img src="/assets/images/logonc.webp" alt="Logo" class="loading-logo">
+<div *ngIf="isLoading" class="loading-spinner">
+  <img src="/assets/images/logonc.webp" alt="Loading Logo" class="loading-logo">
   <div class="spinner"></div>
 </div>
-
 <div>
   <!-- Seção de Banner -->
   <section class="banner-section position-relative">
@@ -23,12 +21,7 @@
           <div class="col-md-4 col-sm-6 mb-4 grid-item">
             <div class="img-container">
               <a [href]="'/assets/images/Cozinhas/' + image" class="glightbox" data-gallery="cozinhas">
-                <img
-                  [src]="'/assets/images/Cozinhas/' + image"
-                  [alt]="'Cozinha ' + image"
-                  class="img-fluid"
-                  loading="lazy"
-                >
+                <img [src]="'/assets/images/Cozinhas/' + image" [alt]="'Cozinha ' + image" class="img-fluid" loading="lazy">
               </a>
             </div>
           </div>

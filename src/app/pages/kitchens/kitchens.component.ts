@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';import {NgForOf, NgClass, NgIf} from "@angular/common";
 import {TranslateModule} from '@ngx-translate/core';
-import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-kitchens',
@@ -22,21 +21,39 @@ export class KitchensComponent implements OnInit {
     'c21.png'  , 'c22.jpg' ,'c23.jpg' , 'c24.jpg' , 'c25.jpg' , 'c26.jpg','c27.jpg'  , 'c28.jpg'  , 'c30.jpg'
   ];
 
+  isLoading: boolean = true; // Inicia com o loading ativo
+  loadedImages: number = 0;
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
-    // Rola para o topo da página ao carregar (somente no navegador)
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Inicializa o GLightbox apenas no navegador
-      setTimeout(() => {
-        import('glightbox').then(GLightbox => {
-          GLightbox.default({
-            selector: '.glightbox',
-          });
-        });
-      }, 500);
+      // Espera até que pelo menos as primeiras 3 imagens carreguem
+      this.images.slice(0, 3).forEach(image => {
+        const img = new Image();
+        img.src = `/assets/images/Cozinhas/${image}`;
+        img.onload = () => this.onImageLoaded();
+        img.onerror = () => this.onImageLoaded();
+      });
     }
+  }
+
+  onImageLoaded(): void {
+    this.loadedImages++;
+    if (this.loadedImages >= 3) {
+      // Remove o loader após as primeiras 3 imagens carregarem ou falharem
+      this.isLoading = false;
+      this.initializeGlightbox();
+    }
+  }
+
+  initializeGlightbox() {
+    import('glightbox').then(GLightbox => {
+      GLightbox.default({
+        selector: '.glightbox',
+      });
+    });
   }
 }
