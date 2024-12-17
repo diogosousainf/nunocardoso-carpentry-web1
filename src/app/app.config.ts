@@ -1,7 +1,7 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule, provideHttpClient, withFetch} from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {CookieService} from '../cookie.service';
@@ -13,6 +13,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
+    provideHttpClient(withFetch()), // HttpClient com suporte a Fetch API
+
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(
       TranslateModule.forRoot({

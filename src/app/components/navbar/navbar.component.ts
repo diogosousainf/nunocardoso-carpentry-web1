@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
 declare var bootstrap: any;
 
 @Component({
@@ -19,29 +20,40 @@ declare var bootstrap: any;
 export class NavbarComponent implements OnInit {
   currentLanguage = 'pt';
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object // Injeta o identificador da plataforma
+  ) {
     translate.setDefaultLang('pt');
     translate.use('pt');
   }
 
   ngOnInit() {
-    // Recuperar idioma salvo, se existir
-    const savedLang = localStorage.getItem('selectedLanguage');
-    if (savedLang) {
-      this.currentLanguage = savedLang;
-      this.translate.use(savedLang);
+    // Verifica se o código está sendo executado no navegador
+    if (isPlatformBrowser(this.platformId)) {
+      const savedLang = localStorage.getItem('selectedLanguage');
+      if (savedLang) {
+        this.currentLanguage = savedLang;
+        this.translate.use(savedLang);
+      }
     }
   }
 
   changeLanguage(lang: string) {
     this.currentLanguage = lang;
     this.translate.use(lang);
-    localStorage.setItem('selectedLanguage', lang);
+
+    // Somente salva no localStorage se estiver no navegador
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('selectedLanguage', lang);
+    }
   }
 
   closeMenu() {
     const navbarCollapse = document.getElementById('navbarNav');
-    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-    bsCollapse.hide();
+    if (navbarCollapse) {
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+      bsCollapse.hide();
+    }
   }
 }
