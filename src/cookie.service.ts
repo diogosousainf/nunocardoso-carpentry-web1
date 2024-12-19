@@ -2,25 +2,23 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CookieService {
-  private cookieConsent = new BehaviorSubject<boolean | null>(null);
+  private cookieConsent = new BehaviorSubject<boolean | null>(
+    this.isBrowser() ? localStorage.getItem('cookieConsent') === 'accepted' : null
+  );
   cookieConsent$ = this.cookieConsent.asObservable();
 
   constructor() {
-    this.initializeCookieConsent();
   }
 
-  private initializeCookieConsent() {
-    if (typeof window !== 'undefined') {
-      const consent = localStorage.getItem('cookieConsent');
-      this.cookieConsent.next(consent === 'accepted');
-    }
+  private isBrowser(): boolean {
+    return typeof window !== 'undefined';
   }
 
   acceptCookies(): void {
-    if (typeof window !== 'undefined') {
+    if (this.isBrowser()) {
       localStorage.setItem('cookieConsent', 'accepted');
       this.cookieConsent.next(true);
       this.enableCookies();
@@ -28,7 +26,7 @@ export class CookieService {
   }
 
   rejectCookies(): void {
-    if (typeof window !== 'undefined') {
+    if (this.isBrowser()) {
       localStorage.setItem('cookieConsent', 'rejected');
       this.cookieConsent.next(false);
       this.disableCookies();
@@ -36,20 +34,14 @@ export class CookieService {
   }
 
   hasUserMadeChoice(): boolean {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('cookieConsent') !== null;
-    }
-    return false;
+    return this.isBrowser() && localStorage.getItem('cookieConsent') !== null;
   }
 
   private enableCookies(): void {
-    // Aqui você pode adicionar código para habilitar cookies de terceiros
-    
-    // Por exemplo: Google Analytics, etc.
+    // Adicione aqui a lógica para habilitar cookies de terceiros (se necessário).
   }
 
   private disableCookies(): void {
-    // Aqui você pode adicionar código para desabilitar cookies de terceiros
-    // Por exemplo: Google Analytics, etc.
+    // Adicione aqui a lógica para desabilitar cookies de terceiros (se necessário).
   }
 }
