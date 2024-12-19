@@ -1,8 +1,13 @@
 .hero-container {
   position: relative;
   width: 100%;
-  height: calc(100vh - 82px);
+  height: 100vh; /* Altura total da viewport */
+  overflow: hidden; /* Garante que nada saia da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 
 .recent-works-label {
   position: absolute;
@@ -21,7 +26,6 @@
   transform: translateX(20px);
   opacity: 0;
   animation: slideIn 0.5s ease-out forwards;
-  backdrop-filter: blur(5px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -89,29 +93,26 @@
   background-color: #3e2a1f;
 }
 
-@media (max-width: 768px) {
-  .recent-works-label {
-    top: 1rem;
-    left: 1rem;
+/* Ajustes dinâmicos para dispositivos médios como o iPad Air */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-container {
+    height: calc(100vh - 60px); /* Compensa elementos fixos como headers */
   }
 
-  .label-content {
-    padding: 0.6rem 1rem;
-  }
-
-  .recent-works-title {
-    font-size: 0.8rem;
-  }
-
-  .hero-carousel {
-    height: calc(100vh - 82px);
-  }
   .hero-carousel img {
-    height: calc(100vh - 82px);
-    object-fit: cover;
+    height: calc(100vh - 60px);
+    object-fit: cover; /* Garante que a imagem preencha sem distorção */
   }
-  .carousel-caption {
-    font-size: 0.9rem;
-    padding: 0.5rem;
+}
+
+/* Ajustes para dispositivos menores */
+@media (max-width: 767px) {
+  .hero-container {
+    height: calc(100vh - 60px);
+  }
+
+  .hero-carousel img {
+    height: calc(100vh - 60px);
+    object-fit: cover;
   }
 }
