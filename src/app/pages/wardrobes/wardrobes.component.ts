@@ -25,35 +25,16 @@ export class WardrobesComponent implements OnInit {
       'a11.webp', 'a12.webp',  'a14.webp', 'a15.webp', 'a16.webp',
     'a18.webp', 'a19.webp', 'a21.webp', 'a22.webp', 'a23.jpg', 'a24.jpg', 'a25.jpg', 'a26.jpg'
   ];
-  isLoading: boolean = true; // Inicia com o loading ativo
-  loadedImages: number = 0;
-
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // Espera até que pelo menos as primeiras 3 imagens carreguem
-      this.images.slice(0, 3).forEach(image => {
-        const img = new Image();
-        img.src = `/assets/images/Armários/${image}`;
-        img.onload = () => this.onImageLoaded();
-        img.onerror = () => this.onImageLoaded();
-      });
-    }
-  }
-
-  onImageLoaded(): void {
-    this.loadedImages++;
-    if (this.loadedImages >= 3) {
-      // Remove o loader após as primeiras 3 imagens carregarem ou falharem
-      this.isLoading = false;
       this.initializeGlightbox();
     }
   }
 
-  initializeGlightbox() {
+  initializeGlightbox(): void {
     import('glightbox').then(GLightbox => {
       GLightbox.default({
         selector: '.glightbox',

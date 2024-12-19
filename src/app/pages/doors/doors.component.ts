@@ -20,35 +20,16 @@ export class DoorsComponent implements OnInit {
     'p11.webp', 'p15.webp', 'p19.webp', 'p21.webp', 'p27.webp','p29.webp',
     'p30.webp', 'p31.webp', 'p32.webp', 'porta-menu.JPEG'
   ];
-  isLoading: boolean = true; // Inicia com o loading ativo
-  loadedImages: number = 0;
-
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // Espera até que pelo menos as primeiras 3 imagens carreguem
-      this.images.slice(0, 3).forEach(image => {
-        const img = new Image();
-        img.src = `/assets/images/Portas/${image}`;
-        img.onload = () => this.onImageLoaded();
-        img.onerror = () => this.onImageLoaded();
-      });
-    }
-  }
-
-  onImageLoaded(): void {
-    this.loadedImages++;
-    if (this.loadedImages >= 3) {
-      // Remove o loader após as primeiras 3 imagens carregarem ou falharem
-      this.isLoading = false;
       this.initializeGlightbox();
     }
   }
 
-  initializeGlightbox() {
+  initializeGlightbox(): void {
     import('glightbox').then(GLightbox => {
       GLightbox.default({
         selector: '.glightbox',
