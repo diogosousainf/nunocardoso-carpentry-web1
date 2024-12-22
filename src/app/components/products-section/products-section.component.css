@@ -73,15 +73,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 10px 20px;
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  text-shadow: -1px -1px 0 #000, 0px -1px 0 #000, -1px 0px 0 #000, 1px 1px 0 #000;
-
 }
 
 .products .product-box:hover img {
@@ -101,18 +99,17 @@
 
   .products .col-md-4 {
     width: 100%;
-    margin-bottom: 20px;
   }
 
   .products h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .section-title {
     font-size: 1.2rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .products .product-box {
     margin-bottom: 10px;
     height: 140px;
@@ -132,12 +129,17 @@
   }
 
   .products h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .title-container {
+    margin-bottom: -20px;
+    margin-top: -10px;
   }
 
  
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1024px) {
   .product-box-large {
     height: 400px;
   }
@@ -159,4 +161,33 @@
     margin-bottom: 25px;
   }
 }
-/* Produtos */
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  #doors-section,
+  #general-carpentry-section,
+  #kitchens-wardrobes-section {
+    width: 100%;
+  }
+
+  .product-box {
+    height: 200px;
+    margin-bottom: 0;
+  }
+
+  .product-box-large,
+  .product-box-half {
+    height: 200px;
+  }
+
+  .products img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
