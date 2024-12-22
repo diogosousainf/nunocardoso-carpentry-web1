@@ -1,5 +1,12 @@
-<app-hero-carousel></app-hero-carousel>
-<app-products-section></app-products-section>
-<app-company></app-company>
-<app-talktous></app-talktous>
-<app-about-us></app-about-us>
+<div *ngIf="isDesktop; else mobileView">
+    <app-products-section></app-products-section>
+  </div>
+  <ng-template #mobileView>
+    <app-products-section></app-products-section>
+  </ng-template>
+  <app-hero-carousel></app-hero-carousel>
+  <app-company></app-company>
+  <app-talktous></app-talktous>
+  <app-about-us></app-about-us>
+
+  
