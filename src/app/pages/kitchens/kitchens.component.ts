@@ -16,7 +16,7 @@ import {TranslateModule} from '@ngx-translate/core';
 })
 export class KitchensComponent implements OnInit {
   images: string[] = [
-    'IMG_1107.JPG','IMG_1109.JPG','IMG_1111.JPG','IMG_1112.JPG','IMG_1115.JPG','IMG_1116.JPG','IMG_1117.JPG', 'IMG_1119.JPG','IMG_1121.JPG',
+    '2312-1-cozinha.jpg','2312-2-cozinha.jpg','2312-4-cozinha.jpg','IMG_1107.JPG','IMG_1109.JPG','IMG_1111.JPG','IMG_1112.JPG','IMG_1115.JPG','IMG_1116.JPG','IMG_1117.JPG', 'IMG_1119.JPG','IMG_1121.JPG',
     'c8.png'  , 'c9.png'  ,'c10.png'  , 'c11.png' , 'c12.png'     , 'c15.png' , 'c16.png' , 'c17.png' ,'c19.png' ,'c20.png' ,
     'c21.png'  , 'c22.jpg' ,'c23.jpg' , 'c24.jpg' , 'c25.jpg' , 'c26.jpg','c27.jpg'  , 'c28.jpg'  , 'c30.jpg'
   ];
