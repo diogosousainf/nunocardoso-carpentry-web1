@@ -27,7 +27,12 @@
               },
               "src/assets",
               "src/sitemap.xml",
-              "src/robots.txt"
+              "src/robots.txt",
+              {
+                "glob": "_redirects",
+                "input": "./",
+                "output": "./"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
