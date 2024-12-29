@@ -4,7 +4,6 @@ import { routes } from './app.routes';
 import {HttpClient, HttpClientModule, provideHttpClient, withFetch} from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {CookieService} from '../cookie.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -26,6 +25,5 @@ export const appConfig: ApplicationConfig = {
         defaultLanguage: 'pt'
       })
     ),
-    CookieService
   ]
 };
