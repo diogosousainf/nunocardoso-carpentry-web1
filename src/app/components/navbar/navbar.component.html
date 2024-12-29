@@ -31,10 +31,10 @@
             {{ 'NAV.PRODUCTS' | translate }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-            <li><a class="dropdown-item" routerLink="/kitchens" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.KITCHENS' | translate }}</a></li>
-            <li><a class="dropdown-item" routerLink="/wardrobes" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.WARDROBES' | translate }}</a></li>
-            <li><a class="dropdown-item" routerLink="/doors" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.DOORS' | translate }}</a></li>
-            <li><a class="dropdown-item" routerLink="/general-carpentry" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.GENERAL_CARPENTRY' | translate }}</a></li>
+            <li><a class="dropdown-item" href="/kitchens" routerLink="/kitchens" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.KITCHENS' | translate }}</a></li>
+            <li><a class="dropdown-item" href="/wardrobes" routerLink="/wardrobes" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.WARDROBES' | translate }}</a></li>
+            <li><a class="dropdown-item" href="/doors" routerLink="/doors" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.DOORS' | translate }}</a></li>
+            <li><a class="dropdown-item" href="/general-carpentry" routerLink="/general-carpentry" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.GENERAL_CARPENTRY' | translate }}</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -52,8 +52,8 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <img 
-              [src]="'assets/images/flags/' + (currentLanguage === 'pt' ? 'pt.png' : 'uk.png')" 
+            <img
+              [src]="'assets/images/flags/' + (currentLanguage === 'pt' ? 'pt.png' : 'uk.png')"
               [alt]="currentLanguage === 'pt' ? 'Português' : 'English'"
               class="flag-icon"
             >
