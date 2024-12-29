@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Sitemaps
+Sitemap: https://nunocardosocarpintaria.com/sitemap.xml

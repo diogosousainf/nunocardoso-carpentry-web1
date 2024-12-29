@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: https://nunocardosocarpintaria.com/404
