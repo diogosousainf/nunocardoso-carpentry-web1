@@ -5,12 +5,14 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CookieService {
-  private cookieConsent = new BehaviorSubject<boolean | null>(
-    this.isBrowser() ? localStorage.getItem('cookieConsent') === 'accepted' : null
-  );
+  private cookieConsent = new BehaviorSubject<boolean | null>(null); // Inicializa com null
   cookieConsent$ = this.cookieConsent.asObservable();
 
   constructor() {
+    if (this.isBrowser()) {
+      const consent = localStorage.getItem('cookieConsent');
+      this.cookieConsent.next(consent === 'accepted'); 
+    }
   }
 
   private isBrowser(): boolean {
@@ -38,10 +40,8 @@ export class CookieService {
   }
 
   private enableCookies(): void {
-    // Adicione aqui a lógica para habilitar cookies de terceiros (se necessário).
   }
 
   private disableCookies(): void {
-    // Adicione aqui a lógica para desabilitar cookies de terceiros (se necessário).
   }
 }
