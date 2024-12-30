@@ -22,7 +22,7 @@ export class AppComponent {
     this.meta.addTags([
       { name: 'description', content: 'Oferecemos serviços de carpintaria de alta qualidade em Portugal.' },
       { name: 'keywords', content: 'carpintaria, móveis, carpinteiro, Portugal' },
-      { property: 'og:title', content: 'Nuno Cardoso carpintaria' },
+      { property: 'og:title', content: 'Nuno Cardoso Carpintaria' },
       { property: 'og:description', content: 'Conheça nossos serviços de carpintaria personalizados em Portugal.' },
     ]);
   }
