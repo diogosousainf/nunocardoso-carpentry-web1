@@ -18,7 +18,7 @@ export class AppComponent {
 
 
   constructor(private meta: Meta, private title: Title) {
-    this.title.setTitle('Nuno Cardoso carpintaria');
+    this.title.setTitle('Nuno Cardoso Carpintaria');
     this.meta.addTags([
       { name: 'description', content: 'Oferecemos serviços de carpintaria de alta qualidade em Portugal.' },
       { name: 'keywords', content: 'carpintaria, móveis, carpinteiro, Portugal' },
