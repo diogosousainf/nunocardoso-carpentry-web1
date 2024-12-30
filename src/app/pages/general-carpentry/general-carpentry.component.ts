@@ -1,6 +1,8 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
 import {NgForOf, NgClass, NgIf, isPlatformBrowser} from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-general-carpentry',
@@ -22,13 +24,26 @@ export class GeneralCarpentryComponent implements OnInit {
     '9.webp', '10.webp', '11.webp', '12.webp',   '18.webp',
     '25.webp', '27.webp', '28.webp', '30.webp', '31.webp',
   ];
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta,
+    private title: Title
+  ) {}
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       this.initializeGlightbox();
     }
+    // Atualizar título e metatags
+    this.title.setTitle('Carpintaria Geral - Nuno Cardoso Carpintaria');
+    this.meta.addTags([
+      { name: 'description', content: 'Explore os serviços de carpintaria geral de alta qualidade oferecidos por Nuno Cardoso Carpintaria. Orçamentos personalizados disponíveis!' },
+      { name: 'keywords', content: 'carpintaria geral, móveis sob medida, carpintaria, Portugal' },
+      { property: 'og:title', content: 'Carpintaria Geral - Nuno Cardoso Carpintaria' },
+      { property: 'og:description', content: 'Carpintaria geral de alta qualidade feita sob medida para suas necessidades. Conheça nossos serviços exclusivos.' },
+      { property: 'og:url', content: 'https://nunocardosocarpintaria.com/general-carpentry' },
+      { property: 'og:image', content: 'https://nunocardosocarpintaria.com/assets/images/Carpintaria-geral/IMG_1124.JPG' },
+    ]);
   }
 
   initializeGlightbox(): void {

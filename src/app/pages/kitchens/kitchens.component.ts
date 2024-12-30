@@ -1,6 +1,9 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';import {NgForOf, NgClass, NgIf} from "@angular/common";
+import { isPlatformBrowser } from '@angular/common';
+import {NgForOf, NgClass, NgIf} from "@angular/common";
 import {TranslateModule} from '@ngx-translate/core';
+import { Meta, Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-kitchens',
@@ -21,13 +24,27 @@ export class KitchensComponent implements OnInit {
     'c21.png'  , 'c22.jpg' ,'c23.jpg' , 'c24.jpg' , 'c25.jpg' , 'c26.jpg','c27.jpg'  , 'c28.jpg'  , 'c30.jpg'
   ];
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta,
+    private title: Title
+  ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       this.initializeGlightbox();
     }
+    // Atualizar título e metatags
+    this.title.setTitle('Cozinhas - Nuno Cardoso Carpintaria');
+    this.meta.addTags([
+      { name: 'description', content: 'Conheça nossas cozinhas sob medida com design moderno e funcionalidade. Orçamentos personalizados!' },
+      { name: 'keywords', content: 'cozinhas, móveis sob medida, carpintaria, Portugal' },
+      { property: 'og:title', content: 'Cozinhas - Nuno Cardoso Carpintaria' },
+      { property: 'og:description', content: 'Cozinhas planeadas e feitas sob medida por Nuno Cardoso Carpintaria. Perfeitas para transformar a sua casa.' },
+      { property: 'og:url', content: 'https://nunocardosocarpintaria.com/kitchens' },
+      { property: 'og:image', content: 'https://nunocardosocarpintaria.com/assets/images/Cozinhas/IMG_1107.JPG' },
+    ]);
   }
 
   initializeGlightbox(): void {

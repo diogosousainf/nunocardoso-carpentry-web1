@@ -1,7 +1,8 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
 import {TranslateModule} from '@ngx-translate/core';
 import {NgForOf, NgClass, NgIf, isPlatformBrowser} from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-wardrobes',
@@ -25,13 +26,26 @@ export class WardrobesComponent implements OnInit {
       'a11.webp', 'a12.webp',  'a14.webp', 'a15.webp', 'a16.webp',
     'a18.webp', 'a19.webp', 'a21.webp', 'a22.webp', 'a23.jpg', 'a24.jpg', 'a25.jpg', 'a26.jpg'
   ];
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private meta: Meta,
+    private title: Title
+  ) {}
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       this.initializeGlightbox();
     }
+    // Atualizar título e metatags
+    this.title.setTitle('Armários - Nuno Cardoso Carpintaria');
+    this.meta.addTags([
+      { name: 'description', content: 'Explore os nossos armários sob medida com design exclusivo e funcionalidade. Solicite o seu orçamento!' },
+      { name: 'keywords', content: 'armários, móveis sob medida, carpintaria, Portugal' },
+      { property: 'og:title', content: 'Armários - Nuno Cardoso Carpintaria' },
+      { property: 'og:description', content: 'Armários feitos sob medida para todos os ambientes. Descubra as nossas soluções de carpintaria.' },
+      { property: 'og:url', content: 'https://nunocardosocarpintaria.com/wardrobes' },
+      { property: 'og:image', content: 'https://nunocardosocarpintaria.com/assets/images/Armários/IMG_1129.JPG' },
+    ]);
   }
 
   initializeGlightbox(): void {

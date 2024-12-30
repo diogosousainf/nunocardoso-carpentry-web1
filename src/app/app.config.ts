@@ -12,7 +12,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient(withFetch()), // HttpClient com suporte a Fetch API
+    provideHttpClient(withFetch()),
 
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(

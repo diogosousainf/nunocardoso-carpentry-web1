@@ -1,4 +1,4 @@
-import { Component , HostListener, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {HeroCarouselComponent} from '../../components/hero-carousel/hero-carousel.component';
 import {ProductsSectionComponent} from '../../components/products-section/products-section.component';
 import {AboutUsComponent} from '../../components/about-us/about-us.component';
