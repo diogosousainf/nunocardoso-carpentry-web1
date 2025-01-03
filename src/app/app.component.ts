@@ -20,8 +20,8 @@ export class AppComponent {
   constructor(private meta: Meta, private title: Title) {
     this.title.setTitle('Nuno Cardoso Carpintaria');
     this.meta.addTags([
-      { name: 'description', content: 'Oferecemos serviços de carpintaria de alta qualidade em Portugal.' },
-      { name: 'keywords', content: 'carpintaria, móveis, carpinteiro, Portugal' },
+      { name: 'description', content: 'Oferecemos serviços de carpintaria de alta qualidade em Portugal , estamos localizados em Vila do Conde' },
+      { name: 'keywords', content: 'carpintaria, móveis, carpinteiro, Portugal,Vila do Conde' },
       { property: 'og:title', content: 'Nuno Cardoso Carpintaria' },
       { property: 'og:description', content: 'Conheça nossos serviços de carpintaria personalizados em Portugal.' },
     ]);
