@@ -105,28 +105,28 @@
   .footer {
     padding: 50px 20px;
   }
-  
+
   .footer-title {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
-  
+
   .footer-description {
     font-size: 0.95rem;
     text-align: center;
   }
-  
+
   .footer-logo {
     width: 120px;
     display: block;
     margin: 0 auto 1rem;
   }
-  
+
   .footer-contact li {
     font-size: 0.9rem;
     text-align: center;
   }
-  
+
   .footer-social-icon {
     font-size: 1.4rem;
   }
@@ -136,35 +136,43 @@
   .footer {
     padding: 40px 15px;
   }
-  
+
   .footer-title {
     font-size: 1rem;
   }
-  
+
   .footer-description {
     font-size: 0.85rem;
     margin-bottom: 1rem;
     text-align: center;
   }
-  
+
   .footer-links li {
     margin-bottom: 1rem;
     text-align: center;
   }
-  
+
   .footer-contact li {
     font-size: 0.85rem;
     justify-content: center;
     align-items: center;
   }
-  
+
   .map-container {
     margin: 1rem auto;
     width: 100%;
   }
-  
+
   .footer-social-icon {
     margin: 0 10px;
     font-size: 1.3rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .footer-phones {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    gap: 8px;
   }
 }

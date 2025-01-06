@@ -31,10 +31,10 @@
             {{ 'NAV.PRODUCTS' | translate }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-            <li><a class="dropdown-item" href="/kitchens" routerLink="/kitchens" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.KITCHENS' | translate }}</a></li>
-            <li><a class="dropdown-item" href="/wardrobes" routerLink="/wardrobes" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.WARDROBES' | translate }}</a></li>
-            <li><a class="dropdown-item" href="/doors" routerLink="/doors" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.DOORS' | translate }}</a></li>
-            <li><a class="dropdown-item" href="/general-carpentry" routerLink="/general-carpentry" (click)="closeMenu()">{{ 'NAV.PRODUCTS_SUBMENU.GENERAL_CARPENTRY' | translate }}</a></li>
+            <li><a class="dropdown-item" href="/kitchens" routerLink="/kitchens" (click)="closeMenu(); $event.preventDefault()">{{ 'NAV.PRODUCTS_SUBMENU.KITCHENS' | translate }}</a></li>
+            <li><a class="dropdown-item" href="/wardrobes" routerLink="/wardrobes" (click)="closeMenu(); $event.preventDefault()">{{ 'NAV.PRODUCTS_SUBMENU.WARDROBES' | translate }}</a></li>
+            <li><a class="dropdown-item" href="/doors" routerLink="/doors" (click)="closeMenu(); $event.preventDefault()">{{ 'NAV.PRODUCTS_SUBMENU.DOORS' | translate }}</a></li>
+            <li><a class="dropdown-item" href="/general-carpentry" routerLink="/general-carpentry" (click)="closeMenu(); $event.preventDefault()">{{ 'NAV.PRODUCTS_SUBMENU.GENERAL_CARPENTRY' | translate }}</a></li>
           </ul>
         </li>
         <li class="nav-item">

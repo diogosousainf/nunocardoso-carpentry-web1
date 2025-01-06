@@ -50,10 +50,16 @@ export class NavbarComponent implements OnInit {
   }
 
   closeMenu() {
-    const navbarCollapse = document.getElementById('navbarNav');
-    if (navbarCollapse) {
-      const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-      bsCollapse.hide();
+    if (isPlatformBrowser(this.platformId)) {
+      const navbarCollapse = document.getElementById('navbarNav');
+      if (navbarCollapse) {
+        const isCollapsed = navbarCollapse.classList.contains('show');
+        if (isCollapsed) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+          bsCollapse.hide();
+        }
+      }
     }
   }
+
 }
