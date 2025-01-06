@@ -53,7 +53,6 @@
 }
 
 .footer-contact li i {
-  width: 20px;
   text-align: center;
   color: #3e2a1f;
 }
@@ -67,6 +66,8 @@
 .footer-contact li a:hover {
   color: #3e2a1f;
 }
+
+
 
 .footer-social-icon {
   color: #6b4f36;
@@ -153,7 +154,7 @@
   }
 
   .footer-contact li {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     justify-content: center;
     align-items: center;
   }
@@ -176,3 +177,4 @@
     gap: 8px;
   }
 }
+
