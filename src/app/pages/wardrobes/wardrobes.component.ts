@@ -33,12 +33,12 @@ export class WardrobesComponent implements OnInit {
       this.initializeGlightbox();
     }
     // Atualizar título e metatags
-    this.title.setTitle('Armários - Nuno Cardoso Carpintaria');
+    this.title.setTitle('Armarios - Nuno Cardoso Carpintaria');
     this.meta.addTags([
       { name: 'description', content: 'Explore os nossos armários sob medida com design exclusivo e funcionalidade. Solicite o seu orçamento!' },
       { name: 'keywords', content: 'armários, móveis sob medida, carpintaria, Portugal' },
-      { property: 'og:title', content: 'Armários - Nuno Cardoso Carpintaria' },
-      { property: 'og:description', content: 'Armários feitos sob medida para todos os ambientes. Descubra as nossas soluções de carpintaria.' },
+      { property: 'og:title', content: 'Armarios - Nuno Cardoso Carpintaria' },
+      { property: 'og:description', content: 'Armarios feitos sob medida para todos os ambientes. Descubra as nossas soluções de carpintaria.' },
       { property: 'og:url', content: 'https://nunocardosocarpintaria.com/wardrobes' },
       { property: 'og:image', content: 'https://nunocardosocarpintaria.com/assets/images/Armários/IMG_1129.JPG' },
     ]);
