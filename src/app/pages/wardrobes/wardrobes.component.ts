@@ -24,7 +24,7 @@ export class WardrobesComponent implements OnInit {
      'IMG_1172.JPG',  'IMG_1175.JPG', 'IMG_1176.JPG',
      'a2.webp',  'a4.webp','a6.webp', 'a7.webp', 'a8.webp',
       'a11.webp', 'a12.webp',  'a14.webp', 'a15.webp', 'a16.webp',
-    'a18.webp', 'a19.webp', 'a21.webp', 'a22.webp', 'a23.jpg', 'a24.jpg', 'a25.jpg', 'a26.jpg'
+    'a18.webp', 'a19.webp', 'a21.webp', 'a22.webp', 'a23.jpg', 'a24.jpg', 'a25.jpg'
   ];
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
