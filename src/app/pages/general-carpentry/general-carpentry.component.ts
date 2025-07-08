@@ -18,7 +18,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class GeneralCarpentryComponent implements OnInit {
   images: string[] = [
-    'drf-1.jpg','drf-2.jpg','IMG-20250605-WA0007.jpg','IMG-20250605-WA0006.jpg','IMG-20250605-WA0004.jpg','IMG-20250605-WA0002.jpg','cg-damiao.jpg','cg-damiao-2.jpg','cg-damiao-3.jpg','ED2.jpg','ED3.jpg','ED4.jpg','IMG_1120.JPG' , 'IMG_1122.JPG' , 'IMG_1123.JPG' , 'IMG_1124.JPG' , 'IMG_1125.JPG' , 'IMG_1126.JPG' , 'IMG_1127.JPG','IMG_1128.JPG',
+    'cg07-01.jpg','cg07-02.jpg','cg07-03.jpg','p07-04.jpg','p07-01.jpg','drf-1.jpg','drf-2.jpg','IMG-20250605-WA0007.jpg','IMG-20250605-WA0006.jpg','IMG-20250605-WA0004.jpg','IMG-20250605-WA0002.jpg','cg-damiao.jpg','cg-damiao-2.jpg','cg-damiao-3.jpg','ED2.jpg','ED3.jpg','ED4.jpg','IMG_1120.JPG' , 'IMG_1122.JPG' , 'IMG_1123.JPG' , 'IMG_1124.JPG' , 'IMG_1125.JPG' , 'IMG_1126.JPG' , 'IMG_1127.JPG','IMG_1128.JPG',
     'IMG_1136.JPG','IMG_1137.JPG', 'IMG_1138.JPG','IMG_1144.JPG','IMG_1145.webp','IMG_1178.JPG','cgb3.jpg','cgb2.jpg',
     '1.webp', '2.webp', '4.webp', '5.webp', '6.webp', '7.webp', '8.webp',
     '9.webp', '10.webp', '11.webp', '12.webp',   '18.webp',
