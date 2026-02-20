@@ -18,7 +18,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class WardrobesComponent implements OnInit {
   images: string[] = [
-    'armariosescritorio1.jpeg','armariosescritorio2.jpeg','armariosescritorio3.jpeg','caa1.jpg','obra-m-9.jpg','obra-m-5.jpg','obra-m-6.jpg','IMG-20250605-WA0020.jpg','IMG-20250605-WA0014.jpg','q1-ac.webp', 'IMG_1093.JPG', 'IMG_1095.JPG','IMG_1098.JPG', 'IMG_1129.JPG',  'IMG_1140.JPG', 'IMG_1142.JPG','IMG_1152.JPG', 'IMG_1154.JPG', 'IMG_1155.JPG', 'IMG_1156.JPG', 'IMG_1158.JPG', 'IMG_1160.webp',
+    'armarios-20-02-26-1.jpeg','armarios-20-02-26-2.jpeg','armarios-20-02-26-3.jpeg','armariosescritorio1.jpeg','armariosescritorio2.jpeg','armariosescritorio3.jpeg','caa1.jpg','obra-m-9.jpg','obra-m-5.jpg','obra-m-6.jpg','IMG-20250605-WA0020.jpg','IMG-20250605-WA0014.jpg','q1-ac.webp', 'IMG_1093.JPG', 'IMG_1095.JPG','IMG_1098.JPG', 'IMG_1129.JPG',  'IMG_1140.JPG', 'IMG_1142.JPG','IMG_1152.JPG', 'IMG_1154.JPG', 'IMG_1155.JPG', 'IMG_1156.JPG', 'IMG_1158.JPG', 'IMG_1160.webp',
     'IMG_1161.JPG', 'IMG_1164.JPG', 'IMG_1165.JPG', 'IMG_1166.JPG', 'IMG_1167.JPG', 'IMG_1169.JPG', 'IMG_1170.JPG','IMG_1172.JPG',  'IMG_1175.JPG', 'IMG_1176.JPG','a2.webp',  'a4.webp','a6.webp', 'a7.webp', 'a8.webp','a11.webp', 'a12.webp',  'a14.webp', 'a15.webp', 'a16.webp',
     'a18.webp', 'a19.webp', 'a21.webp', 'a22.webp', 'a23.jpg', 'a24.jpg', 'a25.jpg', 'a26.jpg'
   ];
